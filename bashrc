@@ -1,3 +1,6 @@
+
+
+### bash shortcuts
 # misc
 alias l="ls"
 alias ll="ls -lh"
