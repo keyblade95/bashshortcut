@@ -1,6 +1,6 @@
 
 
-### bash shortcuts
+###| bash shortcuts |###
 # misc
 alias l="ls"
 alias ll="ls -lh"
@@ -34,5 +34,8 @@ alias dcex="docker exec"
 # k8s
 alias kc="kubectl"
 alias kcg="kubectl get"
+
+# conda
 alias ca="conda activate"
 alias cl="conda list"
+###| ====== |###
