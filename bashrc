@@ -1,6 +1,6 @@
 
 ###| bash shortcuts |###
-## v1.0.1
+## v1.0.2
 # misc
 alias l="ls"
 alias ll="ls -lh"
@@ -31,6 +31,11 @@ alias dcompub="docker-compose up --build"
 alias dcs="docker stats"
 alias dce="docker exec"
 alias dcex="docker exec"
+dcdel() {(
+    [[ -z "$1" ]] && echo "Usage: $0 <name-filter> [--dry]" && exit 1
+    [[ "$2" == '--dry' ]] && dcps -a | grep $1 | cut -d ' ' -f 1 && exit 0
+    docker rm $(dcps -a | grep $1 | cut -d ' ' -f 1 | paste -sd ' ')
+)}
 # k8s
 alias k="kubectl"
 complete -F __start_kubectl k
