@@ -1,6 +1,6 @@
 
 ###| bash shortcuts |###
-## v1.0.2
+## v1.0.3
 # misc
 alias l="ls"
 alias ll="ls -lh"
@@ -46,5 +46,5 @@ complete -F __start_kubectl kube
 # conda
 alias ca="conda activate"
 alias ce="conda env list"
-alias cl="conda list"
+alias cl="conda info --envs"
 ###| ====== |###
