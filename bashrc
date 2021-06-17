@@ -1,6 +1,6 @@
 
 ###| bash shortcuts |###
-## v1.0.3
+## v1.0.4
 # misc
 alias l="ls"
 alias ll="ls -lh"
@@ -34,7 +34,10 @@ alias dcex="docker exec"
 dcdel() {(
     [[ -z "$1" ]] && echo "Usage: $0 <name-filter> [--dry]" && exit 1
     [[ "$2" == '--dry' ]] && dcps -a | grep $1 | cut -d ' ' -f 1 && exit 0
-    docker rm $(dcps -a | grep $1 | cut -d ' ' -f 1 | paste -sd ' ')
+    docker rm $(docker ps -a | grep $1 | cut -d ' ' -f 1 | paste -sd ' ')
+)}
+dcdeluntagged() {(
+    docker rmi $(docker images -f "dangling=true" -q)
 )}
 # k8s
 alias k="kubectl"
